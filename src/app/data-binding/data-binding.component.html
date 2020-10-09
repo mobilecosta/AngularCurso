@@ -1,5 +1,5 @@
+<!-- 09. Inicio property-binding
 <section class="property-binding" >
-  <!-- Inicio InterPolacao Comentario
   <article>
     <h3> InterPolation / Interpolação </h3>
     <p>String renderizada com interpolação: {{ url }}</p>
@@ -7,15 +7,17 @@
     <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
     <p>Curso do Angular e Gosto do Curso: {{ cursoAngular && getCurtirCurso()}}</p>
   </article>
-
   <article>
     <h3>Property Binding</h3>
     <img src="{{ urlImagem }}">
     <img [src]="urlImagem">
     <img bind-src="urlImagem">
   </article>
-  Fim InterPolacao Comentario -->
+</section>
+Fim property-binding -->
 
+<!-- 10. Inicio class-style-binding
+<section class="class-style-binding" >
   <article>
     <h3> Class e Style Binding </h3>
     <br>
@@ -42,5 +44,33 @@
       Este texto aparece somente em caso de erro</div>
     <br>
   </article>
-
 </section>
+Fim class-style-binding -->
+
+<!-- 11. Inicio event_binding
+<section class="event_binding" >
+  <article>
+    <h3> Event Binding </h3>
+    <div>
+        <button (click)="botaoClicado()" class="btn btn-primary">Me Clique</button>
+        <br><br>
+        <input type="text"
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvaValor(campoInput.value)"
+        (blur)="salvaValor(campoInput.value)"
+        #campoInput >
+        <p>Valor atual: {{ valoratual }} </p>
+        <p>Valor salvo: {{ valorSalvo }} </p>
+        <br><br>
+        <span
+        (mouseouver)="onMouseOverOut()"
+        (mouseout)="onMouseOverOut()"
+        [class.highlight]="isMouseOver">Passe o mouse sobre mim</span>
+    </div>
+  </article>
+</section>
+Fim event_binding -->
+
+<!-- 12. Inicio two-way-binding https://youtu.be/NxtlQSpSgx8
+Fim two-way-binding -->
+<app-meu-form></app-meu-form>
