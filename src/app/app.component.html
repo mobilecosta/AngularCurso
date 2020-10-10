@@ -4,4 +4,21 @@
 
 <app-meu-primeiro2></app-meu-primeiro2>
 
-<app-data-binding></app-data-binding>
+<br>Selecione um aula
+<select #aula (change)="0">
+  <option value="">Nenhuma</option>
+  <option value="demais">Demais</option>
+  <option value="ciclo">15. ciclo dos componentes</option>
+  <option value="todos">Todos</option>
+</select>
+<br>
+
+<ng-template [ngIf]="aula.value == 'demais' || aula.value == 'todos'">
+  <app-data-binding></app-data-binding>
+</ng-template>
+
+<ng-template [ngIf]="aula.value == 'ciclo' || aula.value == 'todos'">
+  <app-ciclo [valorInicial]="valor" *ngIf="!deletarCiclo"></app-ciclo>
+  <button (click)="mudarValor()">Mudar Valor</button>
+  <button (click)="destruirCiclo()">Deletar</button>
+</ng-template>

@@ -1,5 +1,17 @@
-<!-- 09. Inicio property-binding
-<section class="property-binding" >
+<br>Selecione um aula
+<select #aula (change)="0">
+  <option value="">Nenhuma</option>
+  <option value="property-binding">09. property-binding</option>
+  <option value="class-style-binding">10. class-style-binding</option>
+  <option value="event_binding">11. event_binding</option>
+  <option value="two-way-binding">12. two-way-binding</option>
+  <option value="input-output-properties">13, 14 e 16. input-output-properties</option>
+  <option value="todos">Todos</option>
+</select>
+<br>
+
+<!-- 9. Inicio property-binding -->
+<ng-template [ngIf]="aula.value == 'property-binding' || aula.value == 'todos'">
   <article>
     <h3> InterPolation / Interpolação </h3>
     <p>String renderizada com interpolação: {{ url }}</p>
@@ -13,11 +25,11 @@
     <img [src]="urlImagem">
     <img bind-src="urlImagem">
   </article>
-</section>
-Fim property-binding -->
+</ng-template>
+<!-- 9. Fim property-binding -->
 
-<!-- 10. Inicio class-style-binding
-<section class="class-style-binding" >
+<!-- 10. Inicio class-style-binding -->
+<ng-template [ngIf]="aula.value == 'class-style-binding' || aula.value == 'todos'">
   <article>
     <h3> Class e Style Binding </h3>
     <br>
@@ -44,11 +56,11 @@ Fim property-binding -->
       Este texto aparece somente em caso de erro</div>
     <br>
   </article>
-</section>
-Fim class-style-binding -->
+</ng-template>
+<!-- 9. Fim property-binding -->
 
-<!-- 11. Inicio event_binding
-<section class="event_binding" >
+<!-- 11. Inicio class-style-binding -->
+<ng-template [ngIf]="aula.value == 'event_binding' || aula.value == 'todos'">
   <article>
     <h3> Event Binding </h3>
     <div>
@@ -68,9 +80,25 @@ Fim class-style-binding -->
         [class.highlight]="isMouseOver">Passe o mouse sobre mim</span>
     </div>
   </article>
-</section>
-Fim event_binding -->
+</ng-template>
+<!-- 11. Fim event_binding -->
 
-<!-- 12. Inicio two-way-binding https://youtu.be/NxtlQSpSgx8
-Fim two-way-binding -->
+<!-- 12. Inicio two-way-binding https://youtu.be/NxtlQSpSgx8 -->
+<ng-template [ngIf]="aula.value == 'two-way-binding' || aula.value == 'todos'">
 <app-meu-form></app-meu-form>
+</ng-template>
+<!-- 12. Fim two-way-binding -->
+
+<!-- 13, 14 e 16. Inicio input-output-properties https://youtu.be/G2cBpYZ0fzk -->
+<ng-template [ngIf]="aula.value == 'input-output-properties' || aula.value == 'todos'">
+<section class="input-output-properties" >
+  <article>
+    <h3> Input/Output Properties </h3>
+    <app-curso [nome]="nomeDoCurso"></app-curso>
+    <contador [valor]="valorInicial"
+    (mudouValor)="onMudouValor($event)"
+    ></contador>
+  </article>
+</section>
+</ng-template>
+<!-- 13. Fim input-output-properties -->
